@@ -5,12 +5,16 @@
   <title>Green Glass Door</title>
  </head>
  <body>
-   <h1>Welcome to the Green Glass Door</h1>
+   <h1>The Green Glass Door</h1>
+   A <span style="font-weight:bold"><%= @user_input %></span> <span style="color:<%= @user_color %>"><%= @user_can %></span> go through the green glass door.
+   
+   <br>
+   <h3>Try again!</h3>
    <form method="POST" action="/stage1">
      Can a 
      <input type="text" placeholder="singular noun (i.e. baseball)" size="25" name="user_input">
      go through the green glass door?
-     <input type="submit" value="Check">
+     <input type="submit" value="Try again">
    </form>
  </body>
 </html>
