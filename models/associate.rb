@@ -11,6 +11,7 @@ def get_associations(word)
   puts "Remaining: #{remaining} queries."
   associations = result["associations"]
   associations = associations.split(', ')
+  return [associations, remaining]
 end
 
 # print get_associations("hockey")

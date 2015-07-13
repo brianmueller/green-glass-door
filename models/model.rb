@@ -39,7 +39,16 @@ def find_non_ex(associations)
 end
 
 def get_opposite(word)
-  ggd_test(word) ? find_non_ex(get_associations(word)) : find_ex(get_associations(word))  
+  if ggd_test(word)
+    associations_w_remaining = get_associations(word)
+    opposite_word = find_non_ex(associations_w_remaining[0])
+    remaining = associations_w_remaining[1]
+  else
+    associations_w_remaining = get_associations(word)
+    opposite_word = find_ex(associations_w_remaining[0])
+    remaining = associations_w_remaining[1]
+  end
+  return [opposite_word, remaining]
 end
 
 # puts get_opposite("mouse")

@@ -24,7 +24,9 @@ class ApplicationController < Sinatra::Base
     @user_can_opp = ggd_test(@user_input) ? "CAN'T" : "CAN"
     @user_color_opp = ggd_test(@user_input) ? "red" : "green"
         
-    @opp_example = get_opposite(@user_input)
+    opposite_w_remaining = get_opposite(@user_input)
+    @opp_example = opposite_w_remaining[0]
+    @remaining = opposite_w_remaining[1]
     erb :stage1
   end
 
