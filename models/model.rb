@@ -1,4 +1,5 @@
 require_relative 'associate.rb'
+require_relative 'noun.rb'
 
 def ggd_test(item)
   !(/(.)\1/ !~ item.downcase)
@@ -16,7 +17,7 @@ def find_ex(associations)
   ex = ""
   while ex == ""
     associations.each do |word|
-      if ggd_test(word) # if it passes
+      if (ggd_test(word) && is_noun?(word)) # if it passes ggd and is noun
         ex = word
         break
       end
@@ -29,7 +30,7 @@ def find_non_ex(associations)
   non_ex = ""
   while non_ex == ""
     associations.each do |word|
-      if !(ggd_test(word)) # if it fails
+      if (!(ggd_test(word)) && is_noun?(word)) # if it fails ggd and is noun
         non_ex = word
         break
       end
@@ -57,5 +58,3 @@ def get_opposite(word)
   end
   return [opposite_word, remaining]
 end
-
-# puts get_opposite("mouse")
