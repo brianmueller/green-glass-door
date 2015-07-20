@@ -8,11 +8,10 @@
  <body>
    <div class="wrapper">
      <h1>The Green Glass Door</h1>
-
      <p>A <span style="font-weight:bold"><%= @user_input %></span> <span style="color:<%= @user_color %>"><%= @user_can %></span> go through the green glass door.</p>
-
-     <p>But (a) <span style="text-decoration:underline"><%= @opp_example %></span> <span style="color:<%= @user_color_opp %>"><%= @user_can_opp %></span>.</p>
-
+     <% unless @opp_example.nil? %>
+       <p>But (a) <span style="text-decoration:underline"><%= @opp_example %></span> <span style="color:<%= @user_color_opp %>"><%= @user_can_opp %></span>.</p>
+     <% end %>
      <br>
      <h3>Try again!</h3>
      <form method="POST" action="/stage1">

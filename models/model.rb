@@ -39,13 +39,20 @@ def find_non_ex(associations)
 end
 
 def get_opposite(word)
+  associations_w_remaining = get_associations(word)
   if ggd_test(word)
-    associations_w_remaining = get_associations(word)
-    opposite_word = find_non_ex(associations_w_remaining[0])
+    if associations_w_remaining[0].nil?
+      opposite_word = nil
+    else
+      opposite_word = find_non_ex(associations_w_remaining[0])
+    end
     remaining = associations_w_remaining[1]
   else
-    associations_w_remaining = get_associations(word)
-    opposite_word = find_ex(associations_w_remaining[0])
+    if associations_w_remaining[0].nil?
+      opposite_word = nil
+    else
+      opposite_word = find_ex(associations_w_remaining[0])
+    end
     remaining = associations_w_remaining[1]
   end
   return [opposite_word, remaining]
