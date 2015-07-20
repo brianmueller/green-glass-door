@@ -17,4 +17,4 @@ def is_noun?(word)
 end
 
 # puts is_noun?("basketball")
-puts is_noun?("programming")
+# puts is_noun?("programming")

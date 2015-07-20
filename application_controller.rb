@@ -3,6 +3,7 @@ Bundler.require
 # require 'unirest'
 require_relative 'models/model.rb'
 require_relative 'models/associate.rb'
+require_relative 'models/texter.rb'
 
 class ApplicationController < Sinatra::Base
 
@@ -27,6 +28,9 @@ class ApplicationController < Sinatra::Base
     opposite_w_remaining = get_opposite(@user_input)
     @opp_example = opposite_w_remaining[0]
     @remaining = opposite_w_remaining[1]
+    if (@remaining.to_i <= 1000 && @remaining.to_i%100==0) 
+      send_message(@remaining)
+    end
     erb :stage1
   end
 
