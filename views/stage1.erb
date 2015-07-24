@@ -1,31 +1,56 @@
 <!DOCTYPE html>
 <html>
- <head>
+
+<head>
   <meta charset="UTF-8">
   <title>Green Glass Door</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,700,300,400' rel='stylesheet' type='text/css'>
 
   <link rel="icon" type="image/png" href="images/ggd_favicon.ico">
- </head>
- <body>
-   <div class="wrapper">
-     <h1>The Green Glass Door</h1>
-     <p>A <span style="font-weight:bold"><%= @user_input.downcase %></span> <span style="color:<%= @user_color %>"><%= @user_can %></span> go through the green glass door.</p>
-     <% unless @opp_example.nil? %>
-       <p>But (a) <span style="text-decoration:underline"><%= @opp_example %></span> <span style="color:<%= @user_color_opp %>"><%= @user_can_opp %></span>.</p>
-     <% end %>
-     <h3>Try again!</h3>
-     <form method="POST" action="/stage1">
-       <p>
-         Can a 
-         <input type="text" placeholder="singular noun (i.e. baseball)" size="25" name="user_input" autofocus>
-         go through the green glass door?<br>
-         <input type="submit" value="Try again">
-       </p>
-     </form>
-     <h5><%= @remaining %> QUERIES REMAINING THIS MONTH</h5>
-   </div>
- </body>
+</head>
+
+<body>
+  <div class="wrapper">
+    <h1>The Green Glass Door</h1>
+    <p>A
+      <span style="font-weight:bold">
+        <%= @user_input.downcase %>
+      </span>
+      <span style="color:<%= @user_color %>">
+        <%= @user_can %>
+      </span> go through the green glass door.</p>
+    <% unless @opp_example.nil? %>
+      <p>But (a)
+        <span style="text-decoration:underline">
+          <%= @opp_example %>
+        </span>
+        <span style="color:<%= @user_color_opp %>">
+          <%= @user_can_opp %>
+        </span>.</p>
+      <% end %>
+        <h3>Try again!</h3>
+        <form method="POST" action="/stage1">
+          <p>
+            Can a
+            <input type="text" placeholder="singular noun (i.e. baseball)" size="25" name="user_input" autofocus required> go through the green glass door?
+            <br>
+          </p>
+          <input class="btn btn-success btn-lg" type="submit" value="Check">
+        </form>
+        <h5>
+          <%= @remaining %> QUERIES REMAINING THIS MONTH</h5>
+  </div>
+</body>
+
 </html>
