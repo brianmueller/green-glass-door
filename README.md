@@ -1,12 +1,9 @@
 ---
 tags: kids, mvc
 languages: ruby
-type: interactive practice
+type: app
 ---
 
-##Sinatra Template
+##Green Glass Door
 
-Fork and clone this repository to use as a template for your project.
-
-
-
+Can you figure out the rule that governs what CAN and CAN'T go through the Green Glass Door?
