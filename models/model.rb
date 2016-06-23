@@ -16,7 +16,7 @@ end
 def find_ex(associations_array)
   ex = ""
     associations_array.each do |word|
-      if ggd_test(word)
+      if (ggd_test(word) && is_noun?(word)) # if it passes ggd and is noun
         ex = word
         break
       end
