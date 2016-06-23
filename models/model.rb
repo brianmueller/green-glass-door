@@ -38,17 +38,17 @@ end
 def get_opposite(word)
   associations_w_remaining = get_associations(word)
   if ggd_test(word)
-    if associations_w_remaining["associations"].nil?
+    if associations_w_remaining["associations_array"].nil?
       opposite_word = nil
     else
-      opposite_word = find_non_ex(associations_w_remaining["associations"])
+      opposite_word = find_non_ex(associations_w_remaining["associations_array"])
     end
     remaining = associations_w_remaining["remaining"]
   else
-    if associations_w_remaining["associations"].nil?
+    if associations_w_remaining["associations_array"].nil?
       opposite_word = nil
     else
-      opposite_word = find_ex(associations_w_remaining["associations"])
+      opposite_word = find_ex(associations_w_remaining["associations_array"])
     end
     remaining = associations_w_remaining["remaining"]
   end
