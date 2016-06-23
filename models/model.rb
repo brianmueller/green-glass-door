@@ -13,30 +13,26 @@ def ggd_color(item)
   ggd_test(item) ? "green" : "red"
 end
 
-def find_ex(associations)
+def find_ex(associations_array)
   ex = ""
-  while ex == ""
-    associations.each do |word|
-      if (ggd_test(word) && is_noun?(word)) # if it passes ggd and is noun
+    associations_array.each do |word|
+      if ggd_test(word)
         ex = word
         break
       end
     end
-  end
-  ex
+  return ex
 end
 
 def find_non_ex(associations)
   non_ex = ""
-  while non_ex == ""
     associations.each do |word|
       if (!(ggd_test(word)) && is_noun?(word)) # if it fails ggd and is noun
         non_ex = word
         break
       end
     end
-  end
-  non_ex
+  return non_ex
 end
 
 def get_opposite(word)
