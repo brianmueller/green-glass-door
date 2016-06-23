@@ -6,6 +6,14 @@
   text-align: center;
 }
 
+#ggd_header {
+  color: green;
+  text-decoration: none;
+}
+#ggd_header:hover {
+  color: darkgreen;
+}
+
 h1 {
   /*margin:0;*/
   font-family: 'Oswald', sans-serif;
@@ -14,7 +22,6 @@ h1 {
   line-height: 2em;
   letter-spacing: 7px;
   color: green;
-  /*color: green;*/
 }
 
 h3 {
