@@ -12,6 +12,6 @@ def is_noun?(word)
   if part_of_speech == "noun"
     return true
   else
-    return true
+    return false
   end
 end
