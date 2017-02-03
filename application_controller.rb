@@ -12,7 +12,6 @@ class ApplicationController < Sinatra::Base
   end
   
   post '/stage1' do
-    # ruby code
     @user_input = params[:user_input]
 
     @user_can = ggd_can(@user_input)
