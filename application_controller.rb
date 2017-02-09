@@ -1,8 +1,7 @@
 require 'bundler'
 Bundler.require
 # require 'unirest'
-require_relative 'models/enter
-.rb'
+require_relative 'models/enter.rb'
 require_relative 'models/associate.rb'
 require_relative 'models/texter.rb'
 
