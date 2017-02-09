@@ -1,3 +1,4 @@
+require 'dotenv/load'
 require 'bundler'
 Bundler.require
 # require 'unirest'
@@ -23,6 +24,7 @@ class ApplicationController < Sinatra::Base
     opposite_w_remaining = get_opposite(@user_input)
     @opp_example = opposite_w_remaining["opposite_word"]
     @remaining = opposite_w_remaining["remaining"]
+    puts "#{@remaining} remaining"
     if (@remaining.to_i <= 1000 && @remaining.to_i%100==0)
       send_message(@remaining)
     end

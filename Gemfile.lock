@@ -4,6 +4,7 @@ GEM
     addressable (2.3.8)
     builder (3.2.2)
     coderay (1.1.0)
+    dotenv (2.2.0)
     json (1.8.3)
     jwt (1.5.1)
     method_source (0.8.2)
@@ -39,11 +40,15 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  dotenv
   pry
   shotgun
   sinatra
   twilio-ruby (~> 4.2.1)
   unirest
 
+RUBY VERSION
+   ruby 2.2.4p230
+
 BUNDLED WITH
-   1.10.4
+   1.12.5
