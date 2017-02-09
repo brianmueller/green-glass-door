@@ -3,7 +3,7 @@ require 'unirest'
 def is_noun?(word)
   response = Unirest.get "https://wordsapiv1.p.mashape.com/words/#{word}",
     headers:{
-      "X-Mashape-Key" => "zuXTIGm8drmshzKubwZLBRQNV0sFp1XDtp5jsnOKpYs4VuyWsC",
+      "X-Mashape-Key" => ENV["WORDS_KEY"],
       "Accept" => "application/json"
     }
   body = response.body
