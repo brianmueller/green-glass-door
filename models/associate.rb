@@ -7,8 +7,8 @@ def get_associations(word)
   }
   header = response.headers
   body = response.body
-
-  remaining = header[:x_ratelimit_queries_remaining]
+  
+  remaining = header[:x_ratelimit_requests_remaining]
   associations_array = body["associations_array"]
 
   return {"associations_array" => associations_array, "remaining" => remaining}

@@ -2,6 +2,10 @@ require 'dotenv/load'
 require 'bundler'
 Bundler.require
 # require 'unirest'
+
+# require 'net/http'
+# require 'json'
+
 require_relative 'models/enter.rb'
 require_relative 'models/associate.rb'
 require_relative 'models/texter.rb'
@@ -13,7 +17,13 @@ class ApplicationController < Sinatra::Base
   end
   
   post '/stage1' do
+    
     @user_input = params[:user_input]
+    
+    # log inputs to gSheet (currently off)
+    # uri = URI('https://maker.ifttt.com/trigger/ggd/with/key/i7dk92evnRWIqDNLiaX5XW301St8kDkaAYA_qz-9kAC')
+    # res = Net::HTTP.post_form(uri, 'value1' => @user_input)
+    # puts res.body
 
     @user_can = ggd_can(@user_input)
     @user_color = ggd_color(@user_input)
